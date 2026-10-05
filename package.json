@@ -1,0 +1,126 @@
+{
+  "name": "codeveya-vscode-extension",
+  "displayName": "AI Code Companion (CodeVeya)",
+  "description": "Cursor-like AI developer client: local-first repo intelligence, unified-diff editing, WebSocket + JSON-RPC to CodeVeya Deep Agent backend.",
+  "version": "0.1.0",
+  "publisher": "codeveya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeveya/codeveya-vscode-extension"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["AI", "Programming Languages", "Other"],
+  "activationEvents": [
+    "onCommand:codeveya.ask",
+    "onCommand:codeveya.explainSelection",
+    "onCommand:codeveya.refactor",
+    "onCommand:codeveya.generateTests",
+    "onCommand:codeveya.indexWorkspace",
+    "onCommand:codeveya.reviewChanges",
+    "onView:codeveya-chat"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "codeveya.ask", "title": "AI Code Companion: Ask" },
+      { "command": "codeveya.explainSelection", "title": "AI Code Companion: Explain Selection" },
+      { "command": "codeveya.refactor", "title": "AI Code Companion: Refactor" },
+      { "command": "codeveya.generateTests", "title": "AI Code Companion: Generate Tests" },
+      { "command": "codeveya.indexWorkspace", "title": "AI Code Companion: Index Workspace" },
+      { "command": "codeveya.reviewChanges", "title": "AI Code Companion: Review Changes" }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codeveya-sidebar",
+          "title": "CodeVeya",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "codeveya-sidebar": [
+        {
+          "id": "codeveya-chat",
+          "name": "Chat",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AI Code Companion",
+      "properties": {
+        "aiCodeCompanion.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "CodeVeya backend HTTP base URL."
+        },
+        "aiCodeCompanion.websocketUrl": {
+          "type": "string",
+          "default": "ws://localhost:8000/ws/agent",
+          "description": "CodeVeya agent WebSocket URL (JSON-RPC 2.0)."
+        },
+        "aiCodeCompanion.authToken": {
+          "type": "string",
+          "default": "",
+          "description": "Auth token (prefer SecretStorage; this setting is fallback)."
+        },
+        "aiCodeCompanion.enableTelemetry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable anonymous telemetry."
+        },
+        "aiCodeCompanion.maxLocalIndexConcurrency": {
+          "type": "number",
+          "default": 4,
+          "description": "Max concurrent local indexing jobs."
+        },
+        "aiCodeCompanion.autoApproveSafePatches": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto-apply single-file, test-only or comment-only patches without approval."
+        },
+        "aiCodeCompanion.requireApprovalForCommands": {
+          "type": "boolean",
+          "default": true,
+          "description": "Require user approval before executing backend-requested commands."
+        },
+        "aiCodeCompanion.excludePatterns": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "Additional glob exclude patterns for local indexing."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/uuid": "^9.0.8",
+    "@types/vscode": "^1.85.0",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
