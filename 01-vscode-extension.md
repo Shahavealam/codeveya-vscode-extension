@@ -362,14 +362,14 @@ Never discard pre-existing user modifications.
 
 Expose:
 
-aiCodeCompanion.backendUrl
-aiCodeCompanion.websocketUrl
-aiCodeCompanion.authToken
-aiCodeCompanion.enableTelemetry
-aiCodeCompanion.maxLocalIndexConcurrency
-aiCodeCompanion.autoApproveSafePatches
-aiCodeCompanion.requireApprovalForCommands
-aiCodeCompanion.excludePatterns
+codeveyaVSCodeExtension.backendUrl
+codeveyaVSCodeExtension.websocketUrl
+codeveyaVSCodeExtension.authToken
+codeveyaVSCodeExtension.enableTelemetry
+codeveyaVSCodeExtension.maxLocalIndexConcurrency
+codeveyaVSCodeExtension.autoApproveSafePatches
+codeveyaVSCodeExtension.requireApprovalForCommands
+codeveyaVSCodeExtension.excludePatterns
 
 Never store secrets in plain text unnecessarily. Prefer VS Code SecretStorage.
 

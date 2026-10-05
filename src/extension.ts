@@ -18,7 +18,7 @@ let agent: AgentClient | null = null;
 
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
   const output = vscode.window.createOutputChannel('CodeVeya');
-  const config = vscode.workspace.getConfiguration('aiCodeCompanion');
+  const config = vscode.workspace.getConfiguration('codeveyaVSCodeExtension');
   const folders = vscode.workspace.workspaceFolders;
   const root = folders?.[0]?.uri.fsPath;
   if (!root) {

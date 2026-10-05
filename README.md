@@ -51,11 +51,11 @@ Press `F5` in VS Code to launch the Extension Development Host.
 
 ## Configure
 
-`aiCodeCompanion.backendUrl`, `aiCodeCompanion.websocketUrl`,
-`aiCodeCompanion.authToken` (migrated to SecretStorage),
-`aiCodeCompanion.enableTelemetry`, `aiCodeCompanion.maxLocalIndexConcurrency`,
-`aiCodeCompanion.autoApproveSafePatches`, `aiCodeCompanion.requireApprovalForCommands`,
-`aiCodeCompanion.excludePatterns`.
+`codeveyaVSCodeExtension.backendUrl`, `codeveyaVSCodeExtension.websocketUrl`,
+`codeveyaVSCodeExtension.authToken` (migrated to SecretStorage),
+`codeveyaVSCodeExtension.enableTelemetry`, `codeveyaVSCodeExtension.maxLocalIndexConcurrency`,
+`codeveyaVSCodeExtension.autoApproveSafePatches`, `codeveyaVSCodeExtension.requireApprovalForCommands`,
+`codeveyaVSCodeExtension.excludePatterns`.
 
 ## Safety
 

@@ -53,42 +53,42 @@
     "configuration": {
       "title": "AI Code Companion",
       "properties": {
-        "aiCodeCompanion.backendUrl": {
+        "codeveyaVSCodeExtension.backendUrl": {
           "type": "string",
           "default": "http://localhost:8000",
           "description": "CodeVeya backend HTTP base URL."
         },
-        "aiCodeCompanion.websocketUrl": {
+        "codeveyaVSCodeExtension.websocketUrl": {
           "type": "string",
           "default": "ws://localhost:8000/ws/agent",
           "description": "CodeVeya agent WebSocket URL (JSON-RPC 2.0)."
         },
-        "aiCodeCompanion.authToken": {
+        "codeveyaVSCodeExtension.authToken": {
           "type": "string",
           "default": "",
           "description": "Auth token (prefer SecretStorage; this setting is fallback)."
         },
-        "aiCodeCompanion.enableTelemetry": {
+        "codeveyaVSCodeExtension.enableTelemetry": {
           "type": "boolean",
           "default": false,
           "description": "Enable anonymous telemetry."
         },
-        "aiCodeCompanion.maxLocalIndexConcurrency": {
+        "codeveyaVSCodeExtension.maxLocalIndexConcurrency": {
           "type": "number",
           "default": 4,
           "description": "Max concurrent local indexing jobs."
         },
-        "aiCodeCompanion.autoApproveSafePatches": {
+        "codeveyaVSCodeExtension.autoApproveSafePatches": {
           "type": "boolean",
           "default": false,
           "description": "Auto-apply single-file, test-only or comment-only patches without approval."
         },
-        "aiCodeCompanion.requireApprovalForCommands": {
+        "codeveyaVSCodeExtension.requireApprovalForCommands": {
           "type": "boolean",
           "default": true,
           "description": "Require user approval before executing backend-requested commands."
         },
-        "aiCodeCompanion.excludePatterns": {
+        "codeveyaVSCodeExtension.excludePatterns": {
           "type": "array",
           "items": { "type": "string" },
           "default": [],

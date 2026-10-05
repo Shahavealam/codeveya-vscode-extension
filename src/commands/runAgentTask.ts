@@ -153,7 +153,7 @@ async function handlePatches(
   const preview = new DiffPreview();
   const applier = new PatchApplier(root);
   const git = new GitService(root);
-  const autoApprove = vscode.workspace.getConfiguration('aiCodeCompanion').get<boolean>('autoApproveSafePatches', false);
+  const autoApprove = vscode.workspace.getConfiguration('codeveyaVSCodeExtension').get<boolean>('autoApproveSafePatches', false);
 
   const hashMap = new Map<string, string>();
   for (const p of patches) {
